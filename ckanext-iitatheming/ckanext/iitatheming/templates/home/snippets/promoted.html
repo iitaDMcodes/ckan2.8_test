@@ -1,0 +1,21 @@
+{% set intro = g.site_intro_text %}
+
+<div class="module-content homepage-about-us">
+  <header>
+    {% if intro %}
+      {{ h.render_markdown(intro) }}
+    {% else %}
+      <h1 class="page-heading">{{ _("Research for Development") }}</h1>
+      <p>
+        {% trans %}IITA conducts research on the following thematic areas: Biotechnology and genetic improvement, Natural resource management, Social science and agribusiness, and Plant production and plant health.
+        {% endtrans %}
+      </p>
+      <p>
+        IITA's CKAN is registered by Re3data, a registry of research data repository. <br>
+        <a href="https://www.re3data.org/repository/r3d100012883" target="_blank">
+          <img src="base/images/re3data.png">
+        </a>
+      </p>
+    {% endif %}
+  </header>
+</div>

@@ -1,0 +1,32 @@
+<div role="main" class="hero">
+  <div class="container">
+    <div class="homepage-welcome">
+      <h1>Making data findable, accessible, interoperable and reusable</h1>
+      <h2>Promoting open access</h2>
+    </div>
+    {% block search %}
+      {% snippet 'home/snippets/search.html' %}
+    {% endblock %}
+  </div>
+</div>
+<div role="main">
+  <div class="container">
+    <div class="row row2">
+      <div class="col-md-12">
+        {% block promoted %}
+          {% snippet 'home/snippets/promoted.html' %}
+        {% endblock %}
+      </div>
+      <div class="col-md-12">
+        {% block stats %}
+          {% snippet 'home/snippets/stats.html' %}
+        {% endblock %}
+      </div>
+       <div class="col-md-12 homepage-recent-data">
+        {% block featured_organization %}
+          {% snippet 'home/snippets/featured_organization.html' %}
+        {% endblock %}
+      </div>
+    </div>
+  </div>
+</div>

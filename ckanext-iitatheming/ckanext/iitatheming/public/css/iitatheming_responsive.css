@@ -1,0 +1,241 @@
+/* For mobile phones: */
+@media only screen and (max-width: 600px) {
+ body{
+  background: #fafafa;
+ }
+
+ .hero{
+  height: 350px;
+ }
+
+ [role="main"]{
+  padding-bottom: 0px;
+  padding-top: 0px;
+ }
+
+ .row{
+  margin-left:0px;
+  margin-right: 0px;
+ }
+
+ .toolbar{
+  padding: 15px;
+ }
+
+ .homepage-welcome h1{
+  font-size: 25px;
+  line-height: 1.2;
+  margin-top:75px;
+ }
+
+ .homepage-welcome h2{
+  font-size: 18px;
+ }
+
+ .search-form .search-input.search-giant input{
+  height: 40px;
+  font-size: 14px;
+ }
+
+ .search-form .search-input.search-giant button i{
+  font-size: 20px;
+  margin-top: 3px;
+ }
+
+ .page-container{
+  background: #f5f5f5;
+ }
+  
+ .order-by-div{
+  padding-top: 15px;
+  float: right;
+ }
+
+ .primary-container{
+  background: #ffffff;
+  margin-top: 0px;
+  margin-bottom: 0px;
+ }
+
+ .module-content{
+  padding: 0px;
+ }
+
+ .primary{
+  border:none;
+ }
+
+ .page-container .container{
+  padding-left: 0px;
+  padding-right: 0px;
+ }
+
+ .secondary-container{
+  padding: 0px 15px;
+ }
+
+ .module-heading{
+  background: #131a22;
+  color: #ffffff;
+  border: none;
+ }
+
+ .group-content p{
+  padding-top: 15px;
+ }
+
+ .secondary{
+  margin-top: 20px;
+ }
+
+ .search-order-div{
+  padding: 0px;
+ }
+
+}
+
+/* For tablets: */
+@media only screen and (min-width: 600px) {
+  .order-by-div{
+    padding-top: 15px;
+    float: right;
+  }
+  .about-us-container img{
+  padding-left: 15px;
+  padding-top: 15px;
+ }
+
+.module-heading {
+  background: #131a22;
+  color: #ffffff;
+  border: none;
+  border-top-width: medium;
+}
+
+/* For laptops and desktops */
+@media only screen and (min-width: 768px) {
+  .ie8 .hero,
+  .ie7 .hero {
+    background: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ),aliceblue url("http://data.iita.org/images/t-background-tile.jpg");
+    background-size: 100%;
+  }
+
+   .container{
+    padding-left: 0px;
+    padding-right: 0px;
+   }
+
+   .order-by-div{
+    padding-top: 0px;
+   }
+
+   .homepage-about-us p{
+    font-size: 20px;
+    line-height: 1.2;
+  }
+
+  .homepage-about-us h1{
+    font-size: 26px;
+  }
+
+  .homepage-stats h3{
+    font-size: 26px;
+  }
+
+  .homepage .stats ul a {
+     font-size: 20px;
+  }
+
+  .toolbar{
+    padding: 20px 70px;
+  }
+
+  .page-container{
+    padding-top: 40px;
+    background:#f5f5f5;
+  }
+
+  .dateset-list{
+    background-color: red;
+  }
+
+  .secondary a:hover{
+    color: #ffffff;
+    text-decoration: none !important;
+  }
+
+  .primary .module-content{
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .wrapper:before{
+    display: none;
+  }
+
+   .media-item{
+    width: 265px;
+    margin-bottom: 30px;
+    min-height: 365px;
+  }
+
+  .context-info h1.heading{
+  color: #ffffff;
+  }
+
+  .org-item{
+    min-height: auto;
+  }
+
+  .footer-contact-us{
+    padding-left: 60px;
+  }
+
+   .nav-item > a{
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .module-heading{
+    color: #ffffff;
+    background: none;
+    border: none;
+  }
+
+  .secondary{
+    border: 1px solid #e9eaec;
+    background: #131a22;
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .secondary p{
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .group-content p{
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .license a{
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .lisence a:hover{
+    text-decoration: none;
+    color: #f26522;
+  }
+
+  code{
+    color: #ffffff;
+  }
+
+  .info{
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+}
+
+@media (min-width: 1200px) {
+  .container{
+      width: 1300px;
+  }
+}

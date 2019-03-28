@@ -1,0 +1,9 @@
+
+
+class RoutePages(toolkit.BaseController):
+
+	def disclaimer(self):
+		return base.render('content/disclaimer.html')
+	
+		
+	

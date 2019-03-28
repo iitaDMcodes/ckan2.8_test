@@ -1,0 +1,21 @@
+{% extends "page.html" %}
+
+{% block subtitle %}{{ _('Disclaimer') }}{% endblock %}
+
+{% block breadcrumb_content %}
+  <li class="active">{% link_for _('Disclaimer'), controller='ckanext.iitatheming.controller:Mypages', action='disclaimer' %}</li>
+{% endblock %}
+
+{% block primary %}
+  <article class="module disclaimer-container">
+   <div class="module-content">
+  These Internet pages serve for information purpose only. Their contents were compiled with due diligence. 
+  However, the International Institute of Tropical Agriculture (IITA) shall not assume any liability, neither expressly nor implied, 
+  for the type or correctness of the material offered and shall not be liable (including liability for indirect  or consequential loss or damage or any loss of profit) 
+  for the material or use of this material. In case contents of websites of the International Institute of Tropical Agriculture violate valid legal regulations, we kindly
+  ask you to inform us immediately. We will then remove the site or the respective contents as quickly as possible.
+  </article>
+  </div>
+{% endblock %}
+
+{% block secondary %}{% endblock %}

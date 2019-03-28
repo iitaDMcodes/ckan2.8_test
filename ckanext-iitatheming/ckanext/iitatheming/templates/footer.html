@@ -1,0 +1,43 @@
+<footer class="site-footer">
+  <div class="container">
+    {% block footer_content %}
+    <div class="row">
+     <div class="col-md-4 footer-location">
+     	<h3>IITA Headquarters</h3>
+     	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3955.724268513676!2d3.89538291495408!3d7.495664294593259!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1039f20f9471f32d%3A0xf277dd601c3f1348!2sIITA+Ibadan!5e0!3m2!1sen!2ske!4v1547713408162" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+     </div>
+     <div class="col-md-4 footer-contact-us">
+      	<h3>Contact Us</h3>
+      	<p>Tel: +234 700800IITA, +1 201 6336094</p>
+      	<p>Fax: +44 208 7113786</p>
+		<p>Email: iita@cgiar.org</p>
+      </div>
+     <div class="col-md-4 footer-quick-links">
+      	<h3>Quick Links</h3>
+        {% block footer_attribution %}
+        	<p><a href="{{ h.url_for(controller='home', action='about') }}">{{ _('About {0}').format(g.site_title) }}</a></p>
+			<p>{% trans %} <a href="mailto:iita-ckan@cgiar.org?Subject=Enquiry:%20data.iita.org" target="_top">Contact us</a>{% endtrans %}</p>
+			<p>{% link_for _('Disclaimer'), controller='ckanext.iitatheming.controller:Mypages', action='disclaimer' %}</p>
+			{% set api_url = 'http://data.iita.org/pages/api' %}
+        	<p><a href="{{ api_url }}">{{ _('Developer API') }}</a></p>
+           <p>{% trans %}<a href="http://data.iita.org/metadata/MetadataCaptureSheet_numeric_data.xlsx">Download Metadata Capture Sheet</a>{% endtrans %}</p>
+           <p>{% trans %}<strong>Powered by</strong> <a class="hide-text ckan-footer-logo" href="http://ckan.org" target="_blank">CKAN</a>{% endtrans %}</p>
+
+            <ul class="list-unstyled">
+            {% block footer_links_ckan %}
+              <li><a href="http://www.opendefinition.org/okd/" target="_blank"><img src="{{ h.url_for_static('/base/images/od_80x15_blue.png') }}" alt="Open Data"></a></li>
+            {% endblock %}
+          </ul>
+        {% endblock %}
+      </div>
+      
+    </div>
+    {% endblock %}
+  </div>
+
+  {% block footer_debug %}
+    {% if g.debug %}
+      {% include 'snippets/debug.html' %}
+    {% endif %}
+  {% endblock %}
+</footer>

@@ -1,0 +1,16 @@
+{% extends "page.html" %}
+{% block subtitle %}{{ _("Disclaimer") }}{% endblock %}
+
+{% block breadcrumb_content %}
+  <li class="active">{% link_for _('Disclaimer'), controller='home', action='disclaimer' %}</li>
+{% endblock %}
+
+{# Insert disclaimer content #}
+
+{ % block primary % }
+{% block disclaimer %}
+{{_("Here goes the content ")}}
+
+{% endblock %}
+{% endblock %}
+

@@ -1,0 +1,28 @@
+{% ckan_extends %}
+
+{% block footer_links_ckan %}     
+<p>{% trans %} IITA Headquarters <br>
+PMB 5320, Oyo Road, Ibadan 200001,<br>
+Oyo State, Nigeria.<br>
+Tel: +234 700800IITA, +1 201 6336094<br>
+Fax: +44 208 7113786<br>
+Email: iita@cgiar.org {% endtrans %}</p>
+
+
+{% set api_url = 'http://data.iita.org/pages/api' %}
+<li><a href="{{ api_url }}">{{ _('Developer API') }}</a></li>
+<li><a href="http://www.opendefinition.org/okd/"><img src="{{ h.url_for_static('/base/images/od_80x15_blue.png') }}"></a></li>
+{% endblock %}
+                  
+{% block footer_attribution %}
+<p>{% trans %}<strong>Powered by</strong> <a class="hide-text ckan-footer-logo">CKAN</a>{% endtrans %}</p><br/>
+
+<p>{% trans %}<a href="http://data.iita.org/metadata/MetadataCaptureSheet_numeric_data.xlsx">Download Metadata Capture Sheet</a>{% endtrans %}</p>
+<p>{% trans %} <a href="mailto:iita-ckan@cgiar.org?Subject=Enquiry:%20data.iita.org" target="_top">Contact us</a>{% endtrans %}</p>
+<p>{% link_for _('Disclaimer'), controller='ckanext.iitatheming.controller:Mypages', action='disclaimer' %}</p>
+{% endblock %}
+
+{% block footer_lang %}
+{% endblock %}
+
+

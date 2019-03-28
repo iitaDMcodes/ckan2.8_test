@@ -1,0 +1,934 @@
+{
+  "scheming_version": 1,
+  "dataset_type": "dataset",
+  "about": "A reimplementation of the default CKAN dataset schema",
+  "about_url": "http://github.com/ckan/ckanext-scheming",
+  "dataset_fields": [
+    {
+      "field_name": "title",
+      "label": "Title",
+      "preset": "title",
+      "display_property": "dc:title",
+      "form_placeholder": "eg. Official or unofficial title",
+      "required":"true"
+    },
+     {
+      "field_name": "name",
+      "label": "URL",
+      "preset": "dataset_slug",
+      "form_placeholder": "eg. my-dataset"
+    },
+     {
+      "field_name": "notes",
+      "label": "Description",
+      "display_property": "dc:description.abstract",
+      "validators": "ignore_missing ",
+      "form_placeholder": "eg. Abstract, short or long description of information or data product",
+      "form_snippet":"markdown.html"
+      
+    },
+    {
+      "field_name": "creator",
+      "label": "Creator",
+      "display_property": "dc:creator",
+      "form_placeholder": "eg. The author, researcher, Scientist",
+      "required":"true"
+
+    },
+    {
+      "field_name": "creatorid_type",
+      "label": "Creator ID Type",
+      "display_property": "cg:creator_id",
+      "validators": "ignore_missing ",
+      "choices": [
+      {
+      "value":"ORCID",
+      "label":"ORCID"
+      },
+     {
+      "value":"SCOPUS",
+      "label":"SCOPUS"
+      }
+      ],
+      
+     "form_snippet":"select.html",
+     "display_snippet":"select.html"
+         
+     },
+    {
+      "field_name": "creator_id",
+      "label": "Creator ID",
+      "display_property": "cg:creator_id",
+      "validators": "ignore_missing ",
+      "form_placeholder": "eg. 0000-0003-3347-861X"
+      
+    },
+     {
+      "field_name": "owner_org",
+      "label": "Organization",
+      "preset": "dataset_organization"
+    },
+     {
+      "field_name": "subject_vocab",
+      "label": "Subject Vocab",
+      "display_property": "cg:subject_vocab",
+      "preset":"tag_string_autocomplete",
+      "form_placeholder": "eg. Agrovoc research area"
+      
+    },
+    {
+      "field_name": "subject",
+      "label": "Subject(s)",
+      "display_property": "dc:subject",
+      "preset":"tag_string_autocomplete",
+      "form_placeholder": "eg. Subject matter of the research etc",
+      "required":"true"
+    },
+    {
+      "field_name": "publisher",
+      "label": "Publisher",
+      "display_property": "dc:publisher",
+      "validators": "ignore_missing ",
+      "form_placeholder": "eg. Someone responsible for publication"
+      
+    },
+    
+    {
+      "field_name": "contributor_person",
+      "label": "Contributor Person",
+      "display_property": "cg:contributor",
+      "form_placeholder": "eg. Person that made contribution to the information product",
+      "validators": "ignore_missing"
+      },
+      {
+      "field_name": "contributor_projectlead_institute",
+      "label": "Contributor Project Lead Organisation Center",
+      "display_property": "cg:contributor",
+      "form_placeholder": "eg. Project lead organisation center that made contribution to the information product",
+      "required":"false",
+      "choices": [
+      {
+      "value":"AfricaRice",
+      "label":"AfricaRice"
+      
+      },
+      {
+      "value":"Bioversity International",
+      "label":"Bioversity International"
+      
+      },
+      {
+      "value":"Center for International Forestry Research (CIFOR)",
+      "label":"Center for International Forestry Research (CIFOR)"
+      
+      },
+      {
+      "value":"International Center for Agricultural Research in the Dry Areas (ICARDA)",
+      "label":"International Center for Agricultural Research in the Dry Areas (ICARDA)"
+      
+      },
+      {
+      "value":"International Center for Tropical Agriculture (CIAT)",
+      "label":"International Center for Tropical Agriculture (CIAT)"
+      
+      },
+      {
+      "value":"International Crops Research Institute for the Semi-Arid Tropics (ICRISAT)",
+      "label":"International Crops Research Institute for the Semi-Arid Tropics (ICRISAT)"
+      
+      },
+       {
+      "value":"International Food Policy Research Institute (IFPRI)",
+      "label":"International Food Policy Research Institute (IFPRI)"
+      
+      },
+      {
+      "value":"International Institute of Tropical Agriculture (IITA)",
+      "label":"International Institute of Tropical Agriculture (IITA)"
+      
+      },
+      {
+      "value":"International Livestock Research Institute (ILRI)",
+      "label":"International Livestock Research Institute (ILRI)"
+      
+      },
+      {
+      "value":"International Maize and Wheat Improvement Center (CIMMYT)",
+      "label":"International Maize and Wheat Improvement Center (CIMMYT)"
+      
+      },
+      {
+      "value":"International Potato Center (CIP)",
+      "label":"International Potato Center (CIP)"
+      
+      },
+      {
+      "value":"International Rice Research Institute (IRRI)",
+      "label":"International Rice Research Institute (IRRI)"
+      
+      },
+      {
+      "value":"International Water Management Institute (IWMI)",
+      "label":"International Water Management Institute (IWMI)"
+      
+      },
+      {
+      "value":"World Agroforestry Centre (ICRAF)",
+      "label":"World Agroforestry Centre (ICRAF)"
+      
+      },
+      {
+      "value":"WorldFish",
+      "label":"WorldFish"
+      }
+      ],
+      
+     "form_snippet":"select.html",
+     "display_snippet":"select.html"
+         
+     },
+     {
+      "field_name": "contributor_center",
+      "label": "Contributor Project Lead Center",
+      "display_property": "cg:contributor",
+      "form_placeholder": "eg. Contributor lead center that made contribution to the information product",
+      "validators": "ignore_missing "
+      },
+    {
+      "field_name": "contributioncrp",
+      "label": "Contributor CRP",
+      "display_property": "cg:contributor",
+      "required": "false",
+      "form_placeholder": "eg. CGIAR Research Program with which the research is affiliated",
+      "required":"true",
+      "choices": [
+      {
+      "value":"CGIAR Research Program on Aquatic Agricultural Systems",
+      "label":"CGIAR Research Program on Aquatic Agricultural Systems (AAS)"
+      
+      },
+      {
+      "value":"CGIAR Research Program on Dryland Systems",
+      "label":"CGIAR Research Program on Dryland Systems"
+      
+      },
+      {
+      "value":"CGIAR Research Program on Agriculture for Nutrition and Health",
+      "label":"CGIAR Research Program on Agriculture for Nutrition and Health (A4NH)"
+      
+      },
+      {
+      "value":"CGIAR Research Program on Forests,Trees and Agroforestry",
+      "label":"CGIAR Research Program on Forests,Trees and Agroforestry (FTA)"
+      
+      },
+      {
+      "value":"CGIAR Research Program on Climate Chane, Agriculture and Food Security",
+      "label":"CGIAR Research Program on Climate Chane, Agriculture and Food Security (CCAFS)"
+      
+      },
+      {
+      "value":"CGIAR Research Program on The Global Rice Science Partnership",
+      "label":"CGIAR Research Program on The Global Rice Science Partnership (GriSP)"
+      
+      },
+       {
+      "value":"CGIAR Research Program on Dryland Cereals",
+      "label":"CGIAR Research Program on Dryland Cereals"
+      
+      },
+      {
+      "value":"CGIAR Research Program on Grain Legumes",
+      "label":"CGIAR Research Program on Grain Legumes"
+      
+      },
+      {
+      "value":"CGIAR Research Program on Integrated Systems for the Humid Tropics",
+      "label":"CGIAR Research Program on Integrated Systems for the Humid Tropics(Humidtropics)"
+      
+      },
+      {
+      "value":"CGIAR Research Program on Policies Institution and Markets",
+      "label":"CGIAR Research Program on Policies Institution and Markets(PIM)"
+      
+      },
+      {
+      "value":"CGIAR Research Program on Livestock and Fish",
+      "label":"CGIAR Research Program on Livestock and Fish"
+      
+      },
+      {
+      "value":"CGIAR Research Program on Roots, Tubers and Banana",
+      "label":"CGIAR Research Program on Roots, Tubers and Banana(RTB)"
+      
+      },
+      {
+      "value":"CGIAR Research Program on Managing and Sustaining Crop Collections",
+      "label":"CGIAR Research Program on Managing and Sustaining Crop Collections(Genebanks)"
+      
+      },
+      {
+      "value":"CGIAR Research Program on Water, Land and Ecosystems",
+      "label":"CGIAR Research Program on Water, Land and Ecosystems (WLE)"
+      
+      },
+      {
+      "value":"CGIAR Research Program on Maize",
+      "label":"CGIAR Research Program on Maize"
+      
+      },
+      {
+      "value":"CGIAR Research Program on Wheat",
+      "label":"CGIAR Research Program on Wheat"
+      }
+      ],
+      
+     "form_snippet":"select.html",
+     "display_snippet":"select.html"
+         
+     },
+    {
+      "field_name": "contributor_partnerid",
+      "label": "Contributor Partner",
+      "display_property": "cg:contributor",
+      "form_placeholder": "eg. Contributor Partner",
+      "validators": "ignore_missing "
+      
+    },
+    {
+      "field_name": "contributor_funder",
+      "label": "Contributor Donor",
+      "display_property": "cg:contributor",
+      "form_placeholder": "eg. Contributor Donor",
+      "validators": "ignore_missing "
+      
+    },
+    {
+      "field_name": "contributor_project",
+      "label": "Contributor Project",
+      "display_property": "cg:contributor",
+      "form_placeholder": "eg. Contributor Project",
+      "validators": "ignore_missing "
+      
+    },
+    
+    {
+      "field_name": "contributor_affiliation",
+      "label": "Contributor Affiliation",
+      "display_property": "cg:contributor_Affliation",
+      "form_placeholder": "eg. when type equal person then personal affiliation",
+      "validators": "ignore_missing "
+      
+    },
+ 
+    {
+    "field_name": "oa_status",
+    "label":"Open-Access status",
+    "display_property":"cg:identifier",
+    "required":"false",
+    "choices": [
+     {
+      "value":"limited",
+      "label":"Limited Access"
+      },
+     {
+     "value":"open",
+     "label":"Open Access"
+      }
+     ],
+     
+     "form_snippet":"select.html",
+     "display_snippet":"select.html"
+         
+    },
+    
+    {
+      "field_name": "creation_date",
+      "label": "Production Date",
+      "preset": "date",
+      "display_property": "dc:date",
+      "form_placeholder": "eg. production date YYYY-MM-DD   ",
+      "required":"true"
+      
+    },
+    {
+      "field_name": "embargo_end_date",
+      "label": "Embargo End Date",
+      "preset": "date",
+      "display_property": "cg:date.embargo-end-date",
+      "form_placeholder": "eg. distribution date YYYY-MM-DD: Item with an embargo, 6 or 12 month"
+    },
+    {
+      "field_name": "content_type",
+      "label": "Content Type",
+      "preset": "tag_string_autocomplete",
+      "display_property": "dc:type",
+      "validators": "not_empty",
+      "form_placeholder": "eg. Nature or genre of data; poster or dataset",
+      "required":"true",
+      "choices": [
+     {
+      "value":"Audio",
+      "label":"Audio"
+      },
+     {
+     "value":"Book",
+     "label":"Book"
+      },
+      {
+      "value":"Book Chapter",
+      "label":"Book Chapter"
+      },
+     {
+     "value":"Dataset",
+     "label":"Dataset"
+      },
+      {
+      "value":"Extension Material",
+      "label":"Extension Material"
+      },
+     {
+     "value":"Image",
+     "label":"Image"
+      },
+      {
+      "value":"Map",
+      "label":"Map"
+      },
+     {
+     "value":"Model",
+     "label":"Model"
+      },
+      {
+      "value":"Peer-reviewed journal article",
+      "label":"Peer-reviewed journal article"
+      },
+     {
+     "value":"Policy Brief",
+     "label":"Policy Brief"
+      },
+      {
+      "value":"Report",
+      "label":"Report"
+      },
+     {
+     "value":"Software",
+     "label":"Software"
+      },
+       {
+      "value":"Source Code",
+      "label":"Source Code"
+      },
+     {
+     "value":"Thesis",
+     "label":"Thesis"
+      },
+       {
+      "value":"Training Material",
+      "label":"Training Material"
+      },
+     {
+     "value":"Video",
+     "label":"Video"
+      }
+     ],
+     
+     "form_snippet":"select.html",
+     "display_snippet":"select.html"
+         
+    },
+
+     {
+      "field_name": "format",
+      "label": "File Format",
+      "preset":"resource_format_autocomplete",
+      "display_property": "dc:format",
+      "validators": "not_empty",
+      "form_placeholder": "eg.  PDF, JPG or XLS",
+      "required": "true"
+    },
+    {
+      "field_name": "identifier_type",
+      "label": "Identifier Type",
+      "display_property": "dc:identifier",
+      "validators": "not_empty",
+      "form_placeholder": "eg. Unambiguous reference to resource such as doi, uri",
+      "required":"true",
+      "choices": [
+     {
+      "value":"ARK",
+      "label":"ARK"
+      },
+     {
+     "value":"ARXIV",
+     "label":"ARXIV"
+      },
+      {
+      "value":"ASIN",
+      "label":"ASIN"
+      },
+     {
+     "value":"BIBCODE",
+     "label":"BIBCODE"
+      },
+      {
+      "value":"DOI",
+      "label":"DOI"
+      },
+     {
+     "value":"EID",
+     "label":"EID"
+      },
+      {
+      "value":"Handles",
+      "label":"Handles"
+      },
+     {
+     "value":"ISBN",
+     "label":"ISBN"
+      },
+      {
+      "value":"ISSN",
+      "label":"ISSN"
+      },
+     {
+     "value":"JFM",
+     "label":"JFM"
+      },
+      {
+      "value":"JSTOR",
+      "label":"JSTOR"
+      },
+     {
+     "value":"LCCN",
+     "label":"LCCN"
+      },
+       {
+      "value":"MR",
+      "label":"MR"
+      },
+     {
+     "value":"OCLC",
+     "label":"OCLC"
+      },
+       {
+      "value":"OL",
+      "label":"OL"
+      },
+     {
+     "value":"OSTI",
+     "label":"OSTI"
+      },
+     {
+     "value":"PMC",
+     "label":"PMC"
+      },
+       {
+      "value":"PMID",
+      "label":"PMID"
+      },
+     {
+     "value":"RFC",
+     "label":"RFC"
+      },
+       {
+      "value":"SSRN",
+      "label":"SSRN"
+      },
+     {
+     "value":"ZBL",
+     "label":"ZBL"
+      }
+     ],
+     
+     "form_snippet":"select.html",
+     "display_snippet":"select.html"
+      
+    },
+    {
+      "field_name": "identifier",
+      "label": "Identifier",
+      "display_property": "dc:identifier",
+      "validators": "not_empty",
+      "form_placeholder": "eg. Unambiguous reference to resource such as doi, uri",
+      "required":"true"
+      
+    },
+     {
+      "field_name": "identifier_citation",
+      "label": "Identifier Citation",
+      "display_property": "dc:identifier.citation",
+      "validators": "ignore_missing",
+      "form_placeholder": "eg. Human-readable, standard bibliographic citation for the item",
+      "form_snippet" : "markdown.html"
+      
+    },
+    {
+      "field_name": "source",
+      "label": "Source",
+      "display_property": "dc:source",
+      "validators": "ignore_missing",
+      "form_placeholder": "eg.Data collection campaign or one of the databases"
+           
+    },
+    {
+      "field_name": "language",
+      "label": "Language",
+      "display_property": "dc:language",
+      "validators": "ignore_missing",
+      "required":"false",
+      "choices": [
+      {
+      "value":"en",
+      "label":"English"
+      },
+      {
+      "value":"fr",
+      "label":"French"
+      },
+      {
+      "value":"es",
+      "label":"Spanish"
+      },
+      {
+      "value":"pt",
+      "label":"Portuguese"
+      }
+      ],
+     "form_snippet":"select.html",
+     "display_snippet":"select.html"
+              
+    },
+     {
+      "field_name": "relation",
+      "label": "Relation",
+      "display_property": "dc:relation",
+      "validators": "ignore_missing",
+      "form_placeholder": "eg. datasets related to publications"
+            
+    },
+   {
+      "field_name": "agroecologicalzone",
+      "label": "Agroecological Zone",
+      "display_property": "dc:coverage",
+      "validators": "ignore_missing",
+      "choices": [
+      {
+      "value":"Humid cool tropics",
+      "label":"Humid cool tropics"
+      },
+      {
+      "value":"Humid warm tropics",
+      "label":"Humid warm tropics"
+      },
+      {
+      "value":"Semihumid cool tropics",
+      "label":"Semihumid cool tropics"
+      },
+      {
+      "value":"Semihumid warm tropics",
+      "label":"Semihumid warm tropics"
+      },
+      {
+      "value":"Semiarid cool tropics",
+      "label":"Semiarid cool tropics"
+      },
+      {
+      "value":"Semiarid warm tropics",
+      "label":"Semiarid warm tropics"
+      },
+      {
+      "value":"Arid cool tropics",
+      "label":"Arid cool tropics"
+      },
+      {
+      "value":"Arid warm tropics",
+      "label":"Arid warm tropics"
+      },
+      {
+      "value":"Semihumid cool subtropics",
+      "label":"Semihumid cool subtropics"
+      },
+      {
+      "value":"Semihumid warm subtropics",
+      "label":"Semihumid warm subtropics"
+      },
+      {
+      "value":"Semiarid cool subtropics",
+      "label":"Semiarid cool subtropics"
+      },
+      {
+      "value":"Semiarid warm subtropics",
+      "label":"Semiarid warm subtropics"
+      },
+      {
+      "value":"Arid cool subtropics",
+      "label":"Arid cool subtropics"
+      },
+      {
+      "value":"Arid warm subtropics",
+      "label":"Arid warm subtropics"
+      }
+      ],
+     "form_snippet":"select.html",
+     "display_snippet":"select.html"
+              
+    },
+     
+      {
+      "field_name": "coverage_region",
+      "label": "Coverage Region",
+      "display_property": "cg:coverage.region",
+      "validators": "ignore_missing",
+      "preset":"tag_string_autocomplete",
+       "choices": [
+      {
+      "value":"Eastern-Africa",
+      "label":"Eastern Africa"
+      },
+      {
+      "value":"Northern-Africa",
+      "label":"Northern Africa"
+      },
+      {
+      "value":"Southern-Africa",
+      "label":"Southern Africa"
+      },
+   {
+      "value":"Western-Africa",
+      "label":"Western Africa"
+      },
+      {
+      "value":"Sub-Saharan-Africa",
+      "label":"Sub-Saharan Africa"
+      },
+      {
+      "value":"Middle-Africa",
+      "label":"Middle Africa"
+      },
+         {
+      "value":"Latin-America",
+      "label":"Latin America"
+      },
+      {
+      "value":"Caribbean",
+      "label":"Caribbean"
+      },
+      {
+      "value":"Central-America",
+      "label":"Central America"
+      },
+       {
+      "value":"South America",
+      "label":"South America"
+      },
+      {
+      "value":"Northern America ",
+      "label":"Northern America "
+      },
+   {
+      "value":"Asia",
+      "label":"Asia"
+      },
+      {
+      "value":"Eastern Europe",
+      "label":"Eastern Europe"
+      },
+      {
+      "value":"Northern Europe",
+      "label":"Northern Europe"
+      },
+         {
+      "value":"Southern Europe",
+      "label":"Southern Europe"
+      },
+      {
+      "value":"Western Europe",
+      "label":"Western Europe"
+      },
+      {
+      "value":"Oceania",
+      "label":"Oceania"
+      }
+      ],
+            
+     "form_snippet":"select.html",
+     "display_snippet":"select.html"
+    },
+         
+    {
+      "field_name": "coverage_country",
+      "label": "Coverage country",
+      "preset":"tag_string_autocomplete",
+      "display_property": "cg:coverage.country",
+      "validators": "ignore_missing",
+      "form_placeholder": "eg. Country(s) related to the data being published"
+            
+    },
+    {
+      "field_name": "coverage_admin_unit",
+      "label": "Coverage Admin Unit",
+      "display_property": "cg:coverage.admin-unit",
+      "validators": "ignore_missing",
+      "form_placeholder": "eg. Sub-national administrative areas i.e province"
+            
+    },
+    {
+   "field_name": "coverage_x",
+      "label": "Coverage X",
+      "validators": "ignore_missing",
+      "form_placeholder": "eg. X Coordinate in geospatial coverage"
+    },
+  
+  {
+   "field_name": "coverage_y",
+      "label": "Coverage Y",
+      "validators": "ignore_missing",
+    "form_placeholder": "eg. Y Coordinate in geospatial coverage"
+  },
+  
+    
+    {
+      "field_name": "coverage_start_date",
+      "label": "Coverage Start Date",
+      "display_property": "cg:coverage.start-date",
+      "validators": "ignore_missing",
+      "form_placeholder": "eg. Chronological period start YYYY-MM-DD"
+            
+    },
+    {
+      "field_name": "coverage_end_date",
+      "label": "Coverage End Date",
+      "display_property": "cg:coverage.end-date",
+      "validators": "ignore_missing",
+      "form_placeholder": "eg. Chronological period end YYYY-MM-DD"
+            
+    },
+ 
+   {
+      "field_name": "license_id",
+      "label": "License",
+      "display_property": "cg:licence",
+      "form_snippet":"license.html",
+      "form_placeholder": "eg. Licensing or permission statement"
+      
+      
+     },
+    
+     {
+      "field_name": "contact",
+      "label": "Contact",
+      "display_property": "cg:contact",
+      "validators": "ignore_missing",
+      "form_placeholder": "eg. Nematology Unit, International Institute of Tropical Agr",
+      "validators": "ignore_missing"
+                  
+    },
+     {
+      "field_name": "contact_email",
+      "label": "Contact Email",
+      "display_property": "cg:contact_email",
+      "validators": "ignore_missing",
+      "form_placeholder": "eg. Email address to contact in case of questions",
+      "display_snippet": "email.html"
+                  
+    },
+    {
+   "field_name": "restriction",
+    "label": "Restriction",
+    "display_property": "cg:restriction",
+    "form_placeholder": "eg. Applicable restrictions on the resource file"
+  },
+  {
+   "field_name": "email_permission",
+      "label": "Email Permission",
+      "validators": "ignore_missing",
+     "form_placeholder": "eg. Email of whom permission was sought",
+      "display_snippet": "email.html"
+    },
+    {
+      "field_name": "rights",
+      "label": "Rights",
+      "display_property": "dc:rights",
+      "required": "true",
+      "form_placeholder": "eg. Other licensing or permission statement"
+      
+     }
+ 
+     ],
+  "resource_fields": [
+    {
+      "field_name": "url",
+      "label": "URL",
+      "preset": "resource_url_upload",
+      "validators" : "not_empty",
+      "required" : "true"
+    },
+    {
+      "field_name": "name",
+      "label": "Name",
+      "form_placeholder": "eg. October 2016 Gold Prices",
+      "validators" : "not_empty",
+      "required" : "true"
+    },
+    {
+      "field_name": "description",
+      "label": "Description",
+      "form_snippet": "markdown.html",
+      "form_placeholder": "Some useful notes about the resource data",
+      "validators" : "not_empty",
+      "required" : "true"
+    },
+    {
+      "field_name": "format",
+      "label": "Format",
+      "display_property": "dc:format",
+      "preset": "resource_format_autocomplete",
+      "validators" : "not_empty",
+      "required" : "true"
+    },
+    {
+  "field_name": "restricted",
+  "label": "Access Restriction",
+  "preset": "composite",
+  "subfields":
+   [
+     {
+       "field_name": "level",
+       "label": "Level",
+       "preset": "select",
+       "form_include_blank_choice": false,
+       "required": true,
+       "choices": [
+         {
+           "value": "public",
+           "label": "Public"
+         },
+         {
+           "value": "registered",
+           "label": "Registered Users"
+         },
+         {
+           "value": "any_organization",
+           "label": "Any Organization Members (Trusted Users)"
+         },
+         {
+           "value": "same_organization",
+           "label": "Same Organization Members"
+          },
+          {
+           "value": "only_allowed_users",
+           "label": "Allowed Users Only"
+         }
+        ]
+      },
+       {
+       "field_name": "allowed_users",
+        "label": "Allowed Users",
+        "preset": "tag_string_autocomplete",
+        "data-module-source":"/api/2/util/user/autocomplete?q=?"
+        }
+      ]
+    }
+  ]
+}
